@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor
+END
+system.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/system.js
+END
+components.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/components.js
+END
+editor.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/editor.js
+END
+inlineformat.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/inlineformat.js
+END
+serializer.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/serializer.js
+END
+linebreak.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/linebreak.js
+END
+range.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/range.js
+END
+link.js
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/link.js
+END
+lists.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/lists.js
+END
+dom.js
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/dom.js
+END
+pendingformats.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/pendingformats.js
+END
+indent.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/indent.js
+END
+image.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/image.js
+END
+formatblock.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/lywsoft/OOTS/!svn/ver/1/Scripts/Editor/formatblock.js
+END

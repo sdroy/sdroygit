@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/lywsoft/OOTS/!svn/ver/39/Views/UserAdminRepository
+END
+UserAdminRepository.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/lywsoft/OOTS/!svn/ver/12/Views/UserAdminRepository/UserAdminRepository.aspx
+END
+UsersAndRoles.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/lywsoft/OOTS/!svn/ver/27/Views/UserAdminRepository/UsersAndRoles.aspx
+END
+ManageRoles.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/lywsoft/OOTS/!svn/ver/14/Views/UserAdminRepository/ManageRoles.aspx
+END
+DocumentUserAdminMenu.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/lywsoft/OOTS/!svn/ver/39/Views/UserAdminRepository/DocumentUserAdminMenu.ascx
+END
+UsersExpiryManagement.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/lywsoft/OOTS/!svn/ver/38/Views/UserAdminRepository/UsersExpiryManagement.aspx
+END
+DocumentsUserAdminGrid.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/lywsoft/OOTS/!svn/ver/37/Views/UserAdminRepository/DocumentsUserAdminGrid.ascx
+END

@@ -1,0 +1,215 @@
+body
+{
+	font-size: 75%;
+	font-family: Verdana, Tahoma, Arial, "Helvetica Neue" , Helvetica, Sans-Serif;
+	color: #232323;
+	background-color: #fff;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset
+{
+	border: 1px solid #ddd;
+	padding: 0 1.4em 1.4em 1.4em;
+	margin: 0 0 1.5em 0;
+}
+
+legend
+{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+textarea
+{
+	min-height: 75px;
+}
+
+.editor-label
+{
+	margin: 1em 0 0 0;
+}
+
+.editor-field
+{
+	margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+	color: #ff0000;
+}
+
+.field-validation-valid
+{
+	display: none;
+}
+
+.input-validation-error
+{
+	border: 1px solid #ff0000;
+	background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.validation-summary-valid
+{
+	display: none;
+}
+
+.noselect
+{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+#main
+{
+	padding-top:20px;
+	padding-left: 00px;
+	margin-bottom:0;
+	background-color: #fff;
+	padding-bottom:0;
+}
+
+#listpanel
+{
+	 
+	padding-left:  305px ;
+	padding-top:0;
+	padding-bottom:0;
+	text-align:left;
+	min-height:500px;
+}
+
+#leftBorder
+{
+    border-left: 2px solid #CCC;    
+}
+
+#floatLeft {
+		float:left;
+	 
+	}
+
+#folderList
+{
+	float: left; 
+	background: none; 
+	border:0; 
+	padding-left:10px; 
+	padding-top: 20px; 
+	width:280px; 
+}
+
+#folderList img
+{
+	vertical-align:middle;
+	height:16px;
+	width:16px;
+}
+
+#DocumentsGrid
+{
+	padding-right:20px;
+}
+
+
+
+
+
+#commands  
+{
+    font-size:1.2em;
+	color: #333;
+	height:40px;
+	width:100%;
+	background:#e3eefb;
+	border:none;
+}
+
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu {
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    
+}
+
+#logindisplay a:link {
+     
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+     
+    text-decoration: none;
+}

@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B296C66A-0E7B-40DE-AA0B-F3A7812B5BA2}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OOTS</RootNamespace>
+    <AssemblyName>DocumentManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>Lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>Lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Mvc">
+      <HintPath>Lib\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AuthenticationsAndAuthorizationsOperations.cs" />
+    <Compile Include="Classes\DocumentsOperations.cs" />
+    <Compile Include="Classes\ReportOperations.cs" />
+    <Compile Include="Classes\ReportPDFBase.cs" />
+    <Compile Include="Classes\UtilityOperations.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Models\FilesDownloadAuditTrailViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\RepositoryController.cs" />
+    <Compile Include="Controllers\UserAdminRepositoryController.cs" />
+    <Compile Include="Controllers\UserRepositoryController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\FileModel.cs" />
+    <Compile Include="Models\DocumentManagementSystemDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagementSystemDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLoginAuditTrailViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\aspnetdb1.MDF" />
+    <Content Include="App_Data\aspnetdb1_log.ldf">
+      <DependentUpon>aspnetdb1.MDF</DependentUpon>
+    </Content>
+    <Content Include="Content\Black\editor.png" />
+    <Content Include="Content\Black\loading.gif" />
+    <Content Include="Content\Black\sprite.png" />
+    <Content Include="Content\Black\treeview-line.png" />
+    <Content Include="Content\Black\treeview-nodes-rtl.png" />
+    <Content Include="Content\Black\treeview-nodes.png" />
+    <Content Include="Content\Default\editor.png" />
+    <Content Include="Content\Default\loading.gif" />
+    <Content Include="Content\Default\sprite.png" />
+    <Content Include="Content\Default\treeview-line.png" />
+    <Content Include="Content\Default\treeview-nodes-rtl.png" />
+    <Content Include="Content\Default\treeview-nodes.png" />
+    <Content Include="Content\Forest\editor.png" />
+    <Content Include="Content\Forest\loading.gif" />
+    <Content Include="Content\Forest\sprite.png" />
+    <Content Include="Content\Forest\treeview-line.png" />
+    <Content Include="Content\Forest\treeview-nodes-rtl.png" />
+    <Content Include="Content\Forest\treeview-nodes.png" />
+    <Content Include="Content\Hay\editor.png" />
+    <Content Include="Content\Hay\loading.gif" />
+    <Content Include="Content\Hay\sprite.png" />
+    <Content Include="Content\Hay\treeview-line.png" />
+    <Content Include="Content\Hay\treeview-nodes-rtl.png" />
+    <Content Include="Content\Hay\treeview-nodes.png" />
+    <Content Include="Content\images\Computer.png" />
+    <Content Include="Content\images\Config.png" />
+    <Content Include="Content\images\DiscRoot.png" />
+    <Content Include="Content\images\Dll.png" />
+    <Content Include="Content\images\Exe.png" />
+    <Content Include="Content\images\File.png" />
+    <Content Include="Content\images\FixedRoot.png" />
+    <Content Include="Content\images\Folder.png" />
+    <Content Include="Content\images\logo225x90.gif" />
+    <Content Include="Content\images\Music.png" />
+    <Content Include="Content\images\NetworkRoot.png" />
+    <Content Include="Content\images\OOTSTitleImage.png" />
+    <Content Include="Content\images\Picture.png" />
+    <Content Include="Content\images\RemovableRoot.png" />
+    <Content Include="Content\images\SysRoot.png" />
+    <Content Include="Content\images\Video.png" />
+    <Content Include="Content\images\Xml.png" />
+    <Content Include="Content\images\Zip.png" />
+    <Content Include="Content\Office2007\editor.png" />
+    <Content Include="Content\Office2007\loading.gif" />
+    <Content Include="Content\Office2007\sprite.png" />
+    <Content Include="Content\Office2007\treeview-line.png" />
+    <Content Include="Content\Office2007\treeview-nodes-rtl.png" />
+    <Content Include="Content\Office2007\treeview-nodes.png" />
+    <Content Include="Content\Outlook\editor.png" />
+    <Content Include="Content\Outlook\loading.gif" />
+    <Content Include="Content\Outlook\sprite.png" />
+    <Content Include="Content\Outlook\treeview-line.png" />
+    <Content Include="Content\Outlook\treeview-nodes-rtl.png" />
+    <Content Include="Content\Outlook\treeview-nodes.png" />
+    <Content Include="Content\Simple\editor.png" />
+    <Content Include="Content\Simple\loading.gif" />
+    <Content Include="Content\Simple\sprite.png" />
+    <Content Include="Content\Simple\treeview-line.png" />
+    <Content Include="Content\Simple\treeview-nodes-rtl.png" />
+    <Content Include="Content\Simple\treeview-nodes.png" />
+    <Content Include="Content\Sitefinity\editor.png" />
+    <Content Include="Content\Sitefinity\loading.gif" />
+    <Content Include="Content\Sitefinity\sprite.png" />
+    <Content Include="Content\Sitefinity\treeview-line.png" />
+    <Content Include="Content\Sitefinity\treeview-nodes-rtl.png" />
+    <Content Include="Content\Sitefinity\treeview-nodes.png" />
+    <Content Include="Content\Sunset\editor.png" />
+    <Content Include="Content\Sunset\loading.gif" />
+    <Content Include="Content\Sunset\sprite.png" />
+    <Content Include="Content\Sunset\treeview-line.png" />
+    <Content Include="Content\Sunset\treeview-nodes-rtl.png" />
+    <Content Include="Content\Sunset\treeview-nodes.png" />
+    <Content Include="Content\telerik.black.min.css" />
+    <Content Include="Content\telerik.common.min.css" />
+    <Content Include="Content\telerik.default.min.css" />
+    <Content Include="Content\telerik.forest.min.css" />
+    <Content Include="Content\telerik.hay.min.css" />
+    <Content Include="Content\telerik.office2007.min.css" />
+    <Content Include="Content\telerik.outlook.min.css" />
+    <Content Include="Content\telerik.rtl.min.css" />
+    <Content Include="Content\telerik.simple.min.css" />
+    <Content Include="Content\telerik.sitefinity.min.css" />
+    <Content Include="Content\telerik.sunset.min.css" />
+    <Content Include="Content\telerik.telerik.min.css" />
+    <Content Include="Content\telerik.vista.min.css" />
+    <Content Include="Content\telerik.web20.min.css" />
+    <Content Include="Content\telerik.webblue.min.css" />
+    <Content Include="Content\telerik.windows7.min.css" />
+    <Content Include="Content\Telerik\editor.png" />
+    <Content Include="Content\Telerik\loading.gif" />
+    <Content Include="Content\Telerik\sprite.png" />
+    <Content Include="Content\Telerik\treeview-line.png" />
+    <Content Include="Content\Telerik\treeview-nodes-rtl.png" />
+    <Content Include="Content\Telerik\treeview-nodes.png" />
+    <Content Include="Content\Vista\editor.png" />
+    <Content Include="Content\Vista\loading.gif" />
+    <Content Include="Content\Vista\sprite.png" />
+    <Content Include="Content\Web20\editor.png" />
+    <Content Include="Content\Web20\loading.gif" />
+    <Content Include="Content\Web20\sprite.png" />
+    <Content Include="Content\Web20\treeview-line.png" />
+    <Content Include="Content\Web20\treeview-nodes-rtl.png" />
+    <Content Include="Content\Web20\treeview-nodes.png" />
+    <Content Include="Content\WebBlue\editor.png" />
+    <Content Include="Content\WebBlue\loading.gif" />
+    <Content Include="Content\WebBlue\sprite.png" />
+    <Content Include="Content\WebBlue\treeview-line.png" />
+    <Content Include="Content\WebBlue\treeview-nodes-rtl.png" />
+    <Content Include="Content\WebBlue\treeview-nodes.png" />
+    <Content Include="Content\Windows7\editor.png" />
+    <Content Include="Content\Windows7\loading.gif" />
+    <Content Include="Content\Windows7\sprite.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="JQueryUI\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.accordion.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.all.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.base.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.button.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.core.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.dialog.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.resizable.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.selectable.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.slider.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.tabs.css" />
+    <Content Include="JQueryUI\themes\base\jquery.ui.theme.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery-ui-1.8.18.custom.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.all.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.base.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.button.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.core.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="JQueryUI\themes\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="Scripts\jquery-1.4.3.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.custom.js" />
+    <Content Include="Scripts\jquery.cascadingDropDown.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.ui.accordion.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.button.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Scripts\jquery.ui.draggable.js" />
+    <Content Include="Scripts\jquery.ui.droppable.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.position.js" />
+    <Content Include="Scripts\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\jquery.ui.resizable.js" />
+    <Content Include="Scripts\jquery.ui.selectable.js" />
+    <Content Include="Scripts\jquery.ui.slider.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\OOTSCommonGrid.js" />
+    <Content Include="Scripts\OOTSWeb.js" />
+    <Content Include="Scripts\telerik.autocomplete.min.js" />
+    <Content Include="Scripts\telerik.calendar.min.js" />
+    <Content Include="Scripts\telerik.combobox.min.js" />
+    <Content Include="Scripts\telerik.common.min.js" />
+    <Content Include="Scripts\telerik.datepicker.min.js" />
+    <Content Include="Scripts\telerik.datetimepicker.min.js" />
+    <Content Include="Scripts\telerik.draganddrop.min.js" />
+    <Content Include="Scripts\telerik.editor.min.js" />
+    <Content Include="Scripts\telerik.grid.editing.min.js" />
+    <Content Include="Scripts\telerik.grid.filtering.min.js" />
+    <Content Include="Scripts\telerik.grid.grouping.min.js" />
+    <Content Include="Scripts\telerik.grid.min.js" />
+    <Content Include="Scripts\telerik.grid.reordering.min.js" />
+    <Content Include="Scripts\telerik.grid.resizing.min.js" />
+    <Content Include="Scripts\telerik.list.min.js" />
+    <Content Include="Scripts\telerik.menu.min.js" />
+    <Content Include="Scripts\telerik.panelbar.min.js" />
+    <Content Include="Scripts\telerik.tabstrip.min.js" />
+    <Content Include="Scripts\telerik.textbox.min.js" />
+    <Content Include="Scripts\telerik.timepicker.min.js" />
+    <Content Include="Scripts\telerik.treeview.min.js" />
+    <Content Include="Scripts\telerik.window.min.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\UserExpiry.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Reports\ReportsInTable.aspx" />
+    <Content Include="Views\Repository\Upload.aspx" />
+    <Content Include="Views\Repository\DocumentAdminMenu.ascx" />
+    <Content Include="Views\Repository\Repository.aspx" />
+    <Content Include="Views\Repository\DocumentsGrid.ascx" />
+    <Content Include="Views\Repository\RepositoryTreeView.ascx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Reports\Reports.aspx" />
+    <Content Include="Views\UserAdminRepository\UsersExpiryManagement.aspx" />
+    <Content Include="Views\UserAdminRepository\DocumentsUserAdminGrid.ascx" />
+    <Content Include="Views\UserAdminRepository\DocumentUserAdminMenu.ascx" />
+    <Content Include="Views\UserAdminRepository\ManageRoles.aspx" />
+    <Content Include="Views\UserAdminRepository\UserAdminRepository.aspx" />
+    <Content Include="Views\UserAdminRepository\UsersAndRoles.aspx" />
+    <Content Include="Views\UserRepository\DocumentUserMenu.ascx" />
+    <Content Include="Views\UserRepository\DocumentsUserGrid.ascx" />
+    <Content Include="Views\UserRepository\UserRepository.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\DocumentManagementSystemDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DocumentManagementSystemDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51492</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ServerExplorerDebug2</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

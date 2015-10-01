@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OOTSDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="OOTSDBModelStoreContainer">
+          <EntitySet Name="aspnet_Profile" EntityType="OOTSDBModel.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="OOTSDBModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="OOTSDBModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="OOTSDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Files" EntityType="OOTSDBModel.Store.Files" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FilesDownloadAuditTrails" EntityType="OOTSDBModel.Store.FilesDownloadAuditTrails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolesFilesAuthorizations" EntityType="OOTSDBModel.Store.RolesFilesAuthorizations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserLoginAuditTrails" EntityType="OOTSDBModel.Store.UserLoginAuditTrails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersFilesAuthorizations" EntityType="OOTSDBModel.Store.UsersFilesAuthorizations" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="OOTSDBModel.Store.FK__aspnet_Pr__UserI__38996AB5">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="OOTSDBModel.Store.FK__aspnet_Us__RoleI__4AB81AF0">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="OOTSDBModel.Store.FK__aspnet_Us__UserI__49C3F6B7">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilesDownloadAuditTrails_aspnet_Users" Association="OOTSDBModel.Store.FK_FilesDownloadAuditTrails_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="FilesDownloadAuditTrails" EntitySet="FilesDownloadAuditTrails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilesDownloadAuditTrails_Files" Association="OOTSDBModel.Store.FK_FilesDownloadAuditTrails_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="FilesDownloadAuditTrails" EntitySet="FilesDownloadAuditTrails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesFilesAuthorizations_aspnet_Roles" Association="OOTSDBModel.Store.FK_RolesFilesAuthorizations_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="RolesFilesAuthorizations" EntitySet="RolesFilesAuthorizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesFilesAuthorizations_Files" Association="OOTSDBModel.Store.FK_RolesFilesAuthorizations_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="RolesFilesAuthorizations" EntitySet="RolesFilesAuthorizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLoginAuditTrails_aspnet_Users" Association="OOTSDBModel.Store.FK_UserLoginAuditTrails_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="UserLoginAuditTrails" EntitySet="UserLoginAuditTrails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersFilesAuthorizations_aspnet_Users" Association="OOTSDBModel.Store.FK_UsersFilesAuthorizations_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="UsersFilesAuthorizations" EntitySet="UsersFilesAuthorizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersFilesAuthorizations_Files" Association="OOTSDBModel.Store.FK_UsersFilesAuthorizations_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="UsersFilesAuthorizations" EntitySet="UsersFilesAuthorizations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="VirtualPath" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="DateTimeUploaded" Type="datetime" Nullable="false" />
+          <Property Name="NiceNameOrAreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="FilesDownloadAuditTrails">
+          <Key>
+            <PropertyRef Name="FileID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DateTimeDownloaded" />
+          </Key>
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateTimeDownloaded" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolesFilesAuthorizations">
+          <Key>
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLoginAuditTrails">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DateTimeLogged" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateTimeLogged" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersFilesAuthorizations">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Pr__UserI__38996AB5">
+          <End Role="aspnet_Users" Type="OOTSDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="OOTSDBModel.Store.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+          <End Role="aspnet_Roles" Type="OOTSDBModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="OOTSDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+          <End Role="aspnet_Users" Type="OOTSDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="OOTSDBModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilesDownloadAuditTrails_aspnet_Users">
+          <End Role="aspnet_Users" Type="OOTSDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="FilesDownloadAuditTrails" Type="OOTSDBModel.Store.FilesDownloadAuditTrails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="FilesDownloadAuditTrails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilesDownloadAuditTrails_Files">
+          <End Role="Files" Type="OOTSDBModel.Store.Files" Multiplicity="1" />
+          <End Role="FilesDownloadAuditTrails" Type="OOTSDBModel.Store.FilesDownloadAuditTrails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FilesDownloadAuditTrails">
+              <PropertyRef Name="FileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesFilesAuthorizations_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="OOTSDBModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="RolesFilesAuthorizations" Type="OOTSDBModel.Store.RolesFilesAuthorizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="RolesFilesAuthorizations">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesFilesAuthorizations_Files">
+          <End Role="Files" Type="OOTSDBModel.Store.Files" Multiplicity="1" />
+          <End Role="RolesFilesAuthorizations" Type="OOTSDBModel.Store.RolesFilesAuthorizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RolesFilesAuthorizations">
+              <PropertyRef Name="FileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLoginAuditTrails_aspnet_Users">
+          <End Role="aspnet_Users" Type="OOTSDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="UserLoginAuditTrails" Type="OOTSDBModel.Store.UserLoginAuditTrails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLoginAuditTrails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersFilesAuthorizations_aspnet_Users">
+          <End Role="aspnet_Users" Type="OOTSDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="UsersFilesAuthorizations" Type="OOTSDBModel.Store.UsersFilesAuthorizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UsersFilesAuthorizations">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersFilesAuthorizations_Files">
+          <End Role="Files" Type="OOTSDBModel.Store.Files" Multiplicity="1" />
+          <End Role="UsersFilesAuthorizations" Type="OOTSDBModel.Store.UsersFilesAuthorizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsersFilesAuthorizations">
+              <PropertyRef Name="FileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OOTSDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="OOTSDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Roles" EntityType="OOTSDBModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_Users" EntityType="OOTSDBModel.aspnet_Users" />
+          <AssociationSet Name="aspnet_UsersInRoles" Association="OOTSDBModel.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <EntitySet Name="UserLoginAuditTrails" EntityType="OOTSDBModel.UserLoginAuditTrail" />
+          <AssociationSet Name="FK_UserLoginAuditTrails_aspnet_Users" Association="OOTSDBModel.FK_UserLoginAuditTrails_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="UserLoginAuditTrail" EntitySet="UserLoginAuditTrails" />
+          </AssociationSet>
+          <EntitySet Name="FilesDownloadAuditTrails" EntityType="OOTSDBModel.FilesDownloadAuditTrail" />
+          <AssociationSet Name="FK_FilesDownloadAuditTrails_aspnet_Users" Association="OOTSDBModel.FK_FilesDownloadAuditTrails_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="FilesDownloadAuditTrail" EntitySet="FilesDownloadAuditTrails" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Profile" EntityType="OOTSDBModel.aspnet_Profile" />
+          <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="OOTSDBModel.FK__aspnet_Pr__UserI__38996AB5">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <EntitySet Name="Files" EntityType="OOTSDBModel.File" />
+          <AssociationSet Name="FK_FilesDownloadAuditTrails_Files" Association="OOTSDBModel.FK_FilesDownloadAuditTrails_Files">
+            <End Role="File" EntitySet="Files" />
+            <End Role="FilesDownloadAuditTrail" EntitySet="FilesDownloadAuditTrails" />
+          </AssociationSet>
+          <AssociationSet Name="RolesFilesAuthorizations" Association="OOTSDBModel.RolesFilesAuthorizations">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="File" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="UsersFilesAuthorizations" Association="OOTSDBModel.UsersFilesAuthorizations">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="File" EntitySet="Files" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="OOTSDBModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+          <NavigationProperty Name="Files" Relationship="OOTSDBModel.RolesFilesAuthorizations" FromRole="aspnet_Roles" ToRole="File" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="OOTSDBModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="UserLoginAuditTrails" Relationship="OOTSDBModel.FK_UserLoginAuditTrails_aspnet_Users" FromRole="aspnet_Users" ToRole="UserLoginAuditTrail" />
+          <NavigationProperty Name="FilesDownloadAuditTrails" Relationship="OOTSDBModel.FK_FilesDownloadAuditTrails_aspnet_Users" FromRole="aspnet_Users" ToRole="FilesDownloadAuditTrail" />
+          <NavigationProperty Name="aspnet_Profile" Relationship="OOTSDBModel.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="Files" Relationship="OOTSDBModel.UsersFilesAuthorizations" FromRole="aspnet_Users" ToRole="File" />
+        </EntityType>
+        <Association Name="aspnet_UsersInRoles">
+          <End Role="aspnet_Roles" Type="OOTSDBModel.aspnet_Roles" Multiplicity="*" />
+          <End Role="aspnet_Users" Type="OOTSDBModel.aspnet_Users" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UserLoginAuditTrail">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DateTimeLogged" />
+          </Key>
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="DateTime" Name="DateTimeLogged" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="OOTSDBModel.FK_UserLoginAuditTrails_aspnet_Users" FromRole="UserLoginAuditTrail" ToRole="aspnet_Users" />
+        </EntityType>
+        <Association Name="FK_UserLoginAuditTrails_aspnet_Users">
+          <End Type="OOTSDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="OOTSDBModel.UserLoginAuditTrail" Role="UserLoginAuditTrail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLoginAuditTrail">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FilesDownloadAuditTrail">
+          <Key>
+            <PropertyRef Name="FileID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DateTimeDownloaded" />
+          </Key>
+          <Property Type="Guid" Name="FileID" Nullable="false" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="DateTime" Name="DateTimeDownloaded" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="OOTSDBModel.FK_FilesDownloadAuditTrails_aspnet_Users" FromRole="FilesDownloadAuditTrail" ToRole="aspnet_Users" />
+          <NavigationProperty Name="File" Relationship="OOTSDBModel.FK_FilesDownloadAuditTrails_Files" FromRole="FilesDownloadAuditTrail" ToRole="File" />
+        </EntityType>
+        <Association Name="FK_FilesDownloadAuditTrails_aspnet_Users">
+          <End Type="OOTSDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="OOTSDBModel.FilesDownloadAuditTrail" Role="FilesDownloadAuditTrail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="FilesDownloadAuditTrail">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="PropertyNames" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PropertyValuesString" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="PropertyValuesBinary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="OOTSDBModel.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+        </EntityType>
+        <Association Name="FK__aspnet_Pr__UserI__38996AB5">
+          <End Type="OOTSDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="OOTSDBModel.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VirtualPath" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateTimeUploaded" Nullable="false" />
+          <Property Type="String" Name="NiceNameOrAreaName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FilesDownloadAuditTrails" Relationship="OOTSDBModel.FK_FilesDownloadAuditTrails_Files" FromRole="File" ToRole="FilesDownloadAuditTrail" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="OOTSDBModel.RolesFilesAuthorizations" FromRole="File" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="OOTSDBModel.UsersFilesAuthorizations" FromRole="File" ToRole="aspnet_Users" />
+        </EntityType>
+        <Association Name="FK_FilesDownloadAuditTrails_Files">
+          <End Type="OOTSDBModel.File" Role="File" Multiplicity="1" />
+          <End Type="OOTSDBModel.FilesDownloadAuditTrail" Role="FilesDownloadAuditTrail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="File">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FilesDownloadAuditTrail">
+              <PropertyRef Name="FileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolesFilesAuthorizations">
+          <End Type="OOTSDBModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="OOTSDBModel.File" Role="File" Multiplicity="*" />
+        </Association>
+        <Association Name="UsersFilesAuthorizations">
+          <End Type="OOTSDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+          <End Type="OOTSDBModel.File" Role="File" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OOTSDBModelStoreContainer" CdmEntityContainer="OOTSDBEntities">
+          <EntitySetMapping Name="aspnet_Roles"><EntityTypeMapping TypeName="OOTSDBModel.aspnet_Roles"><MappingFragment StoreEntitySet="aspnet_Roles">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+            <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users"><EntityTypeMapping TypeName="OOTSDBModel.aspnet_Users"><MappingFragment StoreEntitySet="aspnet_Users">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+            <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+            <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+            <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="OOTSDBModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="UserLoginAuditTrails">
+            <EntityTypeMapping TypeName="OOTSDBModel.UserLoginAuditTrail">
+              <MappingFragment StoreEntitySet="UserLoginAuditTrails">
+                <ScalarProperty Name="DateTimeLogged" ColumnName="DateTimeLogged" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilesDownloadAuditTrails">
+            <EntityTypeMapping TypeName="OOTSDBModel.FilesDownloadAuditTrail">
+              <MappingFragment StoreEntitySet="FilesDownloadAuditTrails">
+                <ScalarProperty Name="DateTimeDownloaded" ColumnName="DateTimeDownloaded" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Profile">
+            <EntityTypeMapping TypeName="OOTSDBModel.aspnet_Profile">
+              <MappingFragment StoreEntitySet="aspnet_Profile">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+                <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="OOTSDBModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NiceNameOrAreaName" ColumnName="NiceNameOrAreaName" />
+                <ScalarProperty Name="DateTimeUploaded" ColumnName="DateTimeUploaded" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="RolesFilesAuthorizations" TypeName="OOTSDBModel.RolesFilesAuthorizations" StoreEntitySet="RolesFilesAuthorizations">
+            <EndProperty Name="File">
+              <ScalarProperty Name="ID" ColumnName="FileID" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UsersFilesAuthorizations" TypeName="OOTSDBModel.UsersFilesAuthorizations" StoreEntitySet="UsersFilesAuthorizations">
+            <EndProperty Name="File">
+              <ScalarProperty Name="ID" ColumnName="FileID" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="OOTSDB">
+        <EntityTypeShape EntityType="OOTSDBModel.aspnet_Roles" Width="1.5" PointX="0.75" PointY="1.25" Height="2.1725878906250005" IsExpanded="true" />
+        <EntityTypeShape EntityType="OOTSDBModel.aspnet_Users" Width="1.5" PointX="3" PointY="1" Height="2.5571907552083326" IsExpanded="true" />
+        <AssociationConnector Association="OOTSDBModel.aspnet_UsersInRoles" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.4324446614583328" />
+          <ConnectorPoint PointX="3" PointY="2.4324446614583328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="OOTSDBModel.UserLoginAuditTrail" Width="1.5" PointX="5.25" PointY="4.5" Height="1.5956835937499996" />
+        <AssociationConnector Association="OOTSDBModel.FK_UserLoginAuditTrails_aspnet_Users" >
+          <ConnectorPoint PointX="4.5" PointY="3.026323114583334" />
+          <ConnectorPoint PointX="5" PointY="3.026323114583334" />
+          <ConnectorPoint PointX="5" PointY="3.3552864583333335" />
+          <ConnectorPoint PointX="5.5885419166666663" PointY="3.3552864583333331" />
+          <ConnectorPoint PointX="5.7552085833333324" PointY="3.3552864583333335" />
+          <ConnectorPoint PointX="6.0937494999999995" PointY="3.3552864583333335" />
+          <ConnectorPoint PointX="6.0937494999999995" PointY="4.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="OOTSDBModel.FilesDownloadAuditTrail" Width="1.5" PointX="5.25" PointY="1.125" Height="1.9802864583333317" />
+        <AssociationConnector Association="OOTSDBModel.FK_FilesDownloadAuditTrails_aspnet_Users" >
+          <ConnectorPoint PointX="4.5" PointY="2.1151432291666667" />
+          <ConnectorPoint PointX="5.25" PointY="2.1151432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="OOTSDBModel.aspnet_Profile" Width="1.5" PointX="4.5" PointY="6.875" Height="2.1725878906249996" />
+        <AssociationConnector Association="OOTSDBModel.FK__aspnet_Pr__UserI__38996AB5" >
+          <ConnectorPoint PointX="3.40625" PointY="4.326396484375" />
+          <ConnectorPoint PointX="3.40625" PointY="7.9612939453125" />
+          <ConnectorPoint PointX="4.5" PointY="7.9612939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="OOTSDBModel.File" Width="1.5" PointX="0.875" PointY="4.25" Height="2.7494921874999996" />
+        <AssociationConnector Association="OOTSDBModel.FK_FilesDownloadAuditTrails_Files" >
+          <ConnectorPoint PointX="2.375" PointY="5.6319472421875" />
+          <ConnectorPoint PointX="3.3229166666666665" PointY="5.6319472421874988" />
+          <ConnectorPoint PointX="3.4895833333333335" PointY="5.6319472421875" />
+          <ConnectorPoint PointX="3.9010436666666664" PointY="5.6319472421874988" />
+          <ConnectorPoint PointX="4.0677103333333333" PointY="5.6319472421875" />
+          <ConnectorPoint PointX="5" PointY="5.6319472421875" />
+          <ConnectorPoint PointX="5" PointY="4.25" />
+          <ConnectorPoint PointX="5.6718752499999994" PointY="4.25" />
+          <ConnectorPoint PointX="5.6718752499999994" PointY="3.1052864583333331" />
+        </AssociationConnector>
+        <AssociationConnector Association="OOTSDBModel.RolesFilesAuthorizations" >
+          <ConnectorPoint PointX="1.5625" PointY="3.6148893229166661" />
+          <ConnectorPoint PointX="1.5625" PointY="4.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="OOTSDBModel.UsersFilesAuthorizations" >
+          <ConnectorPoint PointX="3.984377" PointY="4.326396484375" />
+          <ConnectorPoint PointX="3.984377" PointY="5.8646992187499993" />
+          <ConnectorPoint PointX="3.4895833333333335" PointY="5.8646992187499984" />
+          <ConnectorPoint PointX="3.3229166666666665" PointY="5.8646992187499993" />
+          <ConnectorPoint PointX="2.375" PointY="5.8646992187499993" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

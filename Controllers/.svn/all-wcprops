@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/lywsoft/OOTS/!svn/ver/47/Controllers
+END
+UserAdminRepositoryController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/lywsoft/OOTS/!svn/ver/44/Controllers/UserAdminRepositoryController.cs
+END
+HomeController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/lywsoft/OOTS/!svn/ver/23/Controllers/HomeController.cs
+END
+AccountController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/lywsoft/OOTS/!svn/ver/32/Controllers/AccountController.cs
+END
+UserRepositoryController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/lywsoft/OOTS/!svn/ver/43/Controllers/UserRepositoryController.cs
+END
+ReportsController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/lywsoft/OOTS/!svn/ver/49/Controllers/ReportsController.cs
+END
+RepositoryController.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/lywsoft/OOTS/!svn/ver/40/Controllers/RepositoryController.cs
+END

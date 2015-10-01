@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/lywsoft/OOTS/!svn/ver/6/Classes
+END
+AuthenticationsAndAuthorizationsOperations.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/lywsoft/OOTS/!svn/ver/32/Classes/AuthenticationsAndAuthorizationsOperations.cs
+END
+ReportOperations.cs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/lywsoft/OOTS/!svn/ver/30/Classes/ReportOperations.cs
+END
+ReportPDFBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/lywsoft/OOTS/!svn/ver/29/Classes/ReportPDFBase.cs
+END
+DocumentsOperations.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/lywsoft/OOTS/!svn/ver/41/Classes/DocumentsOperations.cs
+END
+UtilityOperations.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/lywsoft/OOTS/!svn/ver/41/Classes/UtilityOperations.cs
+END
